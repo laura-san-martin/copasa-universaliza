@@ -1,0 +1,17 @@
+﻿//Libs
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/mixins.scss";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/aos/src/sass/aos.scss";
+
+//Settings 
+@import "settings/fonts.scss";
+@import "settings/vars.scss";
+@import "settings/generics.scss";
+
+//Components
+@import "components/footer.scss";
+@import "components/navigation.scss";
+@import "components/copasa.scss";
+
+

@@ -1,0 +1,47 @@
+﻿$color-black: #000000;
+$color-white: #ffffff;
+$color-blue: #21409a;
+$color-blue-light: #70b8c1;
+$color-green: #427441;
+$color-orange: #BF8A61;
+$color-blue-copasa: #0055a4;
+
+$theme-colors: (
+  'black':	$color-black,
+  'white':	$color-white,
+  'green':	$color-green,             
+  'blue': $color-blue,
+  'orange': $color-orange,
+  'blue-light': $color-blue-light,
+  'blue-copasa': $color-blue-copasa,
+);
+
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin custom-color-variant($parent, $value) {
+    #{$parent} {
+        color: $value;
+
+        h2,p,h3,h4{
+            color: $value;
+        }
+    }
+}
+
+@mixin custom-border-variant($parent, $value) {
+    #{$parent} {
+        border: 3px solid $value;
+        border-radius: 1rem;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    @include custom-color-variant('.color-#{$color}',$value);
+    @include custom-border-variant('.#{$color}-border', $value);
+}
