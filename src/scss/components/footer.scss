@@ -49,6 +49,14 @@
         margin: auto;
     }
 
+    @include media-breakpoint-down(lg) { 
+        &__social{
+            a{
+                margin: .5rem;
+            }
+        }
+    }
+
     @include media-breakpoint-down(sm) { 
 
         p{
@@ -63,7 +71,6 @@
 
         &__social{
             width: auto;
-
             margin: auto;
         }
 

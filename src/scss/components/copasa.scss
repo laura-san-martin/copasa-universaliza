@@ -1,4 +1,33 @@
 .copasa{
+
+    &__banner{
+        padding-top: 0;
+        position: relative;
+        
+        &__bg{
+            position: relative;
+
+            img{
+                width: 100%;
+                height: auto;
+                
+                &:nth-child(2){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        &__logo{
+            position: absolute;
+            width: 100%;
+            top:15%;
+            left: 0;
+            right: 0;            
+        }
+    }
+
     &__programa{
         img{
             max-width: 100%;
@@ -6,43 +35,56 @@
         }
     }
 
+    &__acontecendo{
+        background-image: url(../img/pics/bg-4.svg);
+        background-size: cover;
+    }
+
     &__localidades{
 
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-
-        &__map{
-                max-width: 80%;
-                align-self: center;
-        }
+        background-image: url(../img/pics/bg-2.svg);
+        background-size: cover;
         
-        &__list{
-            align-self: flex-end;
-            margin-top: -5rem;
-            p{
-                display: flex;
-                align-items: center;
-                line-height: 2rem;
-                margin-bottom: 0;
+        &__map{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
 
-                span{
-                    font-size: 5rem;
-                }
+            &__img{
+                    max-width: 80%;
+                    align-self: center;
+                    align-self: flex-start;
+            }
+            
+            &__list{
+                align-self: flex-end;
+                margin-top: -8rem;
+                
+                p{
+                    display: flex;
+                    align-items: center;
+                    line-height: 3rem;
+                    margin-bottom: 0;
+                    font-size: 2rem;
 
-                &:nth-child(1){
                     span{
-                        color: $color-blue;
+                        font-size: 8rem;
                     }
-                }
-                &:nth-child(2){
-                    span{
-                        color: $color-orange;
+
+                    &:nth-child(1){
+                        span{
+                            color: $color-blue-medium;
+                        }
                     }
-                }
-                &:nth-child(3){
-                    span{
-                        color: $color-green;
+                    &:nth-child(2){
+                        span{
+                            color: $color-orange;
+                        }
+                    }
+                    &:nth-child(3){
+                        span{
+                            color: $color-green;
+                        }
                     }
                 }
             }
@@ -67,7 +109,9 @@
                     font-size: 2rem;
                     text-align: center;
                     margin: 0;
-                    max-height: 7rem;
+                    max-height: 6rem;
+                    background-color: $color-white;
+                    line-height: 1;
                 }
 
                 img{
@@ -91,80 +135,133 @@
         }
     }
 
-    &__title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        height: 100%;
+    &__conheca{
+        position: relative;
 
-        h2{
-            margin: auto;
-            display: inline-block;
-            width: auto;
-            white-space: pre;
-            font-size: 6rem;
-            line-height: .95;
+        @include media-breakpoint-down(md) {
+            &__bg{
+                min-height: 30rem;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            h3{
+                text-align: center;
+            }
+        }
+        
+        &__bg{
+            width: 100%;
+            height: auto;
         }
 
-        &--small{
-            h2{
-                font-size: 5rem;
+        &__content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-                @include media-breakpoint-down(lg) {
-                    font-size: 3.5rem;
+            .row{
+                margin: auto;
+            }
+
+            a{
+                display: block;
+                background-color: $color-blue;
+                border-radius: .5rem;
+                width: 100%;
+                margin: auto;
+                padding: 1rem;
+    
+                p{
+                    font-size: 2.4rem;
+                    color: $color-white;
+                    font-weight: 900;
+                    text-align: center;
+                    margin: 0;
+                    text-transform: uppercase;
                 }
             }
         }
     }
 
     &__link{
+        padding: 1.5rem;
+        border-radius: .5rem;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 3rem 0 1rem;
-        height: 100%;
-        width: 100%;
-
-        &__content{
-            margin: auto 0;
-            text-align: center;
-            
-            img{
-                max-width: 40%;
-                margin-bottom: 2rem;
-            }
-
-            h3{
-                font-size: 2rem;
-                text-transform: none;
-                white-space: pre;
-                width: 100%;
-            }
+        
+        & > div{
+            height: 100%;
         }
 
-        &__button{
-            background-color: $color-green;
-            border-radius: .5rem;
-            max-width: 80%;
-            margin: auto;
-            margin-top: 2rem;
+        &__container{
+            display: flex;
+            flex-direction: column;
+            padding: 3rem 0 1rem;
+            height: 100%;
+            width: 100%;
+            background-color: $color-white;
 
-            p{
-                font-size: 2.4rem;
-                color: $color-white;
-                font-weight: 900;
+            &__content{
+                margin: auto 0;
                 text-align: center;
+                
+                img{
+                    max-width: 40%;
+                    margin-bottom: 2rem;
+                }
+
+                h3{
+                    font-size: 1.6rem;
+                    text-transform: none;
+                    width: 100%;
+                }
             }
-        }   
 
-        &__click-icon{
-            max-width: 12%;
-            align-self: flex-end;
-            margin-bottom: 0;    
-        }
+            &__button{
+                background-color: $color-green;
+                border-radius: .5rem;
+                max-width: 80%;
+                margin: auto;
+                margin-top: 2rem;
 
-        @include media-breakpoint-down(md) {
-            padding: 3rem 1rem 1rem ;
+                p{
+                    font-size: 2.4rem;
+                    color: $color-white;
+                    font-weight: 900;
+                    text-align: center;
+                }
+            }   
+
+            &__click-icon{
+                max-width: 12%;
+                align-self: flex-end;
+                margin-bottom: 0;    
+            }
+
+            @include media-breakpoint-down(md) {
+                padding: 3rem 1rem 1rem ;
+
+                &__content{                    
+                    img{
+                        max-width: 15rem;
+                    }
+
+                    h3{
+                        font-size: 2rem;
+                    }
+                }
+
+                &__click-icon{
+                    max-width: 4rem;
+                }
+            }
         }
     }
 
@@ -188,6 +285,20 @@
         }            
     }
 
+    &__marco{
+        padding: 2rem 2rem 1rem;
+        p{
+            vertical-align: middle;
+            font-size: 1.6rem;
+
+            span{
+                vertical-align: middle;
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+        }
+    }
+
     &__universalisa{
         display: flex;
         align-items: center;
@@ -200,40 +311,56 @@
     }
 
     &__email{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        position: relative;
         width: 100%;
 
         p{
             border: 1px solid $color-blue-light;
             border-radius: 1rem;
-            font-size: 1.1rem;
-            padding: .5rem 2rem .5rem 1rem;
+            font-size: 1.6rem;
+            padding: .5rem 4rem .5rem 1rem;
             text-align: center;
-            margin: 0;
+            margin: 3rem 0;
             max-height: 7rem;
+            background-color: $color-white;
         }
 
         img{
-            max-height: 6rem;
-            margin-left: -1rem;
+            position: absolute;
+            max-height: 8rem;
             display: block;
-            z-index: 1;
+            right: 0;
+            top: 50%;
+            bottom: 50%;
+            margin: auto;
         }
         
     }
 
     &__contato{
-        min-height: 40rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        position: relative;
+        padding: 0;
+        overflow-y: visible;
 
-        @include media-breakpoint-down(md) {
-            min-height: 0;
+        &__bg{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__content{
+            position: relative;
+            z-index: 1;
+            padding-bottom: 6rem;
+            
+            @include media-breakpoint-down(md) {
+                padding-bottom: 4rem;
+            }
+            
         }
     }
 }

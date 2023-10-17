@@ -1,6 +1,7 @@
 ﻿$color-black: #000000;
 $color-white: #ffffff;
 $color-blue: #21409a;
+$color-blue-medium: #5481c1;
 $color-blue-light: #70b8c1;
 $color-green: #427441;
 $color-orange: #BF8A61;
@@ -13,11 +14,12 @@ $theme-colors: (
   'blue': $color-blue,
   'orange': $color-orange,
   'blue-light': $color-blue-light,
+  'blue-medium': $color-blue-medium,
   'blue-copasa': $color-blue-copasa,
 );
 
 
-@mixin hover-focus {
+@mixin hover-focus {v
     &:hover,
     &:focus {
         @content;
@@ -41,7 +43,14 @@ $theme-colors: (
     }
 }
 
+@mixin custom-bg-variant($parent, $value) {
+    #{$parent} {
+        background-color: $value;
+    }
+}
+
 @each $color, $value in $theme-colors {
+    @include custom-bg-variant('.bg-#{$color}',$value);
     @include custom-color-variant('.color-#{$color}',$value);
     @include custom-border-variant('.#{$color}-border', $value);
 }
