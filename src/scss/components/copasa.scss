@@ -40,6 +40,33 @@
         background-size: cover;
     }
 
+    &__participacao{
+        &__item{
+
+            display: flex;
+            justify-content: space-evenly;
+
+            img{
+                align-self:flex-start;
+                float: left;
+                margin-right: 1rem;
+            }
+
+            
+            &:last-child{
+                margin-left: calc(140px + 1rem);
+            }
+            
+            @include media-breakpoint-down(sm) {      
+                display: block;
+                
+                &:last-child{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
     &__localidades{
 
         background-image: url(../img/pics/bg-2.svg);
@@ -136,46 +163,20 @@
     }
 
     &__conheca{
-        position: relative;
 
-        @include media-breakpoint-down(md) {
-            &__bg{
-                min-height: 30rem;
-                object-fit: cover;
-                object-position: center;
-            }
+        background-image: url(../img/pics/bg-4.jpg);
+        background-size: contain;
 
-            h3{
-                text-align: center;
-            }
-        }
-        
-        &__bg{
-            width: 100%;
-            height: auto;
-        }
 
         &__content{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .row{
-                margin: auto;
-            }
-
             a{
                 display: block;
-                background-color: $color-blue;
-                border-radius: .5rem;
+                background-color: $color-blue-medium;
+                border: 2px solid $color-white;
+                border-radius: 5rem;
                 width: 100%;
-                margin: auto;
-                padding: 1rem;
+                margin: 1rem auto;
+                padding: .5rem;
     
                 p{
                     font-size: 2.4rem;
@@ -266,23 +267,54 @@
     }
 
     &__galeria{
-        &__item{
-            height: 0;
-            margin-bottom: 4rem;
-            width: 100%;
-            padding-top: 100%;
-            position: relative;
+        position: relative;
 
+        @include media-breakpoint-down(md) {
+            padding-bottom:7rem;
+        }
+
+        &__item{
+            position: relative;
+            padding-top: 100%;
+            
             img{
-                top: 0;
+                border: 2px solid white;
+                border-radius: 5px;
                 position: absolute;
-                height: 100%;
-                width: 100%;
-                border-radius: 1rem;
+                top: 1rem;
+                left: 1rem;
+                width: calc(100% - 2rem);
+                height: calc(100% - 2rem);
+                object-fit: cover; 
                 object-position: center;
-                object-fit: cover;
             }
-        }            
+        }         
+        
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            margin: auto;
+            
+            &:first-child{
+                left: -5rem;
+            }
+            &:last-child{
+                right: -5rem;
+            }
+
+            @include media-breakpoint-down(md) {
+                &:first-child{
+                    left: 5rem;
+                }
+                &:last-child{
+                    right: 5rem;
+                }
+
+                top: auto;
+                bottom: 0;
+            }
+        }
     }
 
     &__marco{
